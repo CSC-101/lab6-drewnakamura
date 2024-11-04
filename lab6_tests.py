@@ -64,15 +64,50 @@ class TestCases(unittest.TestCase):
 
 
     # Part 1
+    def test_selection_sort_book_1(self):
+        book1 = data.Book("Drew", "Hello")
+        book2 = data.Book("Drew", "Zoot")
+        book3 = data.Book("Drew", "Banana")
+        input = [book1, book2, book3]
+        expected = [book3, book1, book2]
+        self.assertEqual(expected, lab6.selection_sort_books(input))
 
-
+    def test_selection_sort_book_2(self):
+        input = []
+        expected = []
+        self.assertEqual(expected, lab6.selection_sort_books(input))
     # Part 2
+    def test_swap_case_1(self):
+        input = "Hello"
+        expected = "hELLO"
+        self.assertEqual(expected, lab6.swap_case(input))
 
-
+    def test_swap_case_2(self):
+        input = "Hриве"
+        expected = "Hриве"
+        self.assertEqual(expected, lab6.swap_case(input))
     # Part 3
+    def test_str_translate_1(self):
+        input = "hello"
+        old = 'l'
+        new = 'x'
+        self.assertEqual("hexxo", lab6.str_translate(input, old, new))
 
+    def test_str_translate_2(self):
+        input = ""
+        old = 'c'
+        new = 'x'
+        self.assertEqual("", lab6.str_translate(input, old, new))
 
     # Part 4
+    def test_histogram_1(self):
+        input = "Hello my name is Drew"
+        self.assertEqual({'Hello': 1, 'my': 1,'name':1, 'is': 1, 'Drew':1 }, lab6.histogram(input))
+
+    def test_histogram_2(self):
+        input = "Hello my name is Drew Drew Drew Drew Drew Drew Drew"
+        self.assertEqual({'Hello': 1, 'my': 1,'name':1, 'is': 1, 'Drew':7 }, lab6.histogram(input))
+
 
 
 
